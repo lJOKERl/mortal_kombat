@@ -21,7 +21,6 @@ header {
   justify-content: space-around;
 }
 
-
 .fight_area {
   display: flex;
   justify-content: center;
@@ -51,8 +50,18 @@ header {
   transition: all .8s ease-in-out;
 }
 
+.health_bar:last-child  {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.health_bar:last-child .inner_health {
+  flex-direction: row-reverse;
+}
+
 .health_bar .inner_health span {
-  padding-left: .5em;
+  padding: 0 .5em;
 }
 
 .left_fighter {
