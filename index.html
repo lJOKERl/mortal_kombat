@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mortal combat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+</head>
+<body>
+  <div id="app">
+    <div class="alert" v-if="win">{{ message }}</div>
+    <header>
+      <div class="health_bar">
+        <div class="inner_health" :style="{width: player.health + '%'}">
+          <span>{{ player.name }}</span>
+        </div>
+      </div>
+      <div class="health_bar">
+        <div class="inner_health" :style="{width: computer.health + '%'}">
+          <span>{{ computer.name }}</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="fight_area">
+      <img src="images/sub_zero.gif" alt="" class="left_fighter">
+      <img src="images/ermak.gif" alt="" class="right_fighter">
+    </section>
+
+    <section class="buttons">
+      <div v-if="newGame">
+        <button @click="attack">Удар</button>
+        <button @click="superAttack">Супер удар</button>
+        <button @click="heal">Лечение</button>
+        <button @click="giveUp">Сдаться</button>
+      </div>
+      <div v-else>
+        <button @click="runGame()">Новая игра</button>
+      </div>
+    </section>
+
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="script/script.js"></script>
+</body>
+</html>

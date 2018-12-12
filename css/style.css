@@ -1,0 +1,106 @@
+body {
+  color: #eee;
+  padding: 0;
+  margin: 0;
+  background: #222 url('../images/bg.png');
+}
+
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+
+#app {
+  height: 500px;
+  background-size: 40%;
+}
+
+header {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+
+.fight_area {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  padding-top: 15vh;
+  margin: auto;
+}
+
+.health_bar {
+  height: 40px;
+  width: 45%;
+  border: 2px solid #ddd;
+  background: linear-gradient(to bottom, #ff0000 0%,#c62323 100%);
+}
+
+.health_bar .inner_health {
+  background: linear-gradient(to bottom, #2f3fed 0%,#2c24c9 100%);
+  width: 80%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  transition: all .8s ease-in-out;
+}
+
+.health_bar .inner_health span {
+  padding-left: .5em;
+}
+
+.left_fighter {
+  height: 350px;
+}
+
+.right_fighter {
+  height: 350px;
+  transform: scale(-1, 1);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.buttons button {
+  border: none;
+  border: 2px solid #111;
+  background: none;
+  padding: .75em 1.25em;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: .1em .1em .2em #000;
+  color: #aaa;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-left: 1em;
+}
+
+.buttons button:hover {
+  box-shadow: 0 0 .25em #000;
+  color: #cccccc;
+  background: #222;
+}
+
+.alert {
+  position: fixed;
+  z-index: 3;
+  top: 30%;
+  text-align: center;
+  width: 100%;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: .2em .2em .2em #000;
+}
