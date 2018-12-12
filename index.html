@@ -25,8 +25,14 @@
     </header>
 
     <section class="fight_area">
-      <img src="images/sub_zero.gif" alt="" class="left_fighter">
-      <img src="images/ermak.gif" alt="" class="right_fighter">
+      <template>
+        <img v-if="player.froze" src="images/sub_zero.gif" alt="" class="left_fighter">
+        <img v-else src="images/sub_zero_froze.gif" alt="" class="left_fighter">
+      </template>
+      <template>
+        <img v-if="!computer.block" src="images/scorpion.gif" alt="" class="right_fighter">
+        <img v-else src="images/scorpion_block.gif" alt="" class="right_fighter">
+      </template>
     </section>
 
     <section class="buttons">

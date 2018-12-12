@@ -26,6 +26,7 @@ header {
   justify-content: center;
   width: 90%;
   padding-top: 15vh;
+  align-items: baseline;
   margin: auto;
 }
 
@@ -69,7 +70,7 @@ header {
 }
 
 .right_fighter {
-  height: 350px;
+  height: 340px;
   transform: scale(-1, 1);
 }
 
