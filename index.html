@@ -9,8 +9,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
 </head>
 <body>
+  
   <div id="app">
-    <div class="alert" v-if="win">{{ message }}</div>
+    <audio src="sounds/theme.mp3" v-if="newGame" autoplay="autoplay"></audio>
+    <audio src="sounds/loose.mp3" v-if="win" autoplay="autoplay"></audio>
+
+    <div class="alert" @click="win = !win" v-if="win">{{ message }}</div>
+    <div class="alert blood" v-if="press" v-html="blood"></div>
     <header>
       <div class="health_bar">
         <div class="inner_health" :style="{width: player.health + '%'}">
@@ -25,14 +30,17 @@
     </header>
 
     <section class="fight_area">
-      <template>
+      <!-- <template>
         <img v-if="player.froze" src="images/sub_zero.gif" alt="" class="left_fighter">
         <img v-else src="images/sub_zero_froze.gif" alt="" class="left_fighter">
       </template>
       <template>
         <img v-if="!computer.block" src="images/scorpion.gif" alt="" class="right_fighter">
-        <img v-else src="images/scorpion_block.gif" alt="" class="right_fighter">
-      </template>
+        <img v-else src="images/scorpion_block.gif" style="height: 345px" alt="" class="right_fighter">
+      </template> -->
+
+      <div v-html="subzero" class="left_fighter"></div>
+      <div v-html="scorpion" class="right_fighter"></div>
     </section>
 
     <section class="buttons">
