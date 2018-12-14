@@ -21,6 +21,17 @@ header {
   justify-content: space-around;
 }
 
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  color: #ddd;
+  margin-top: -.95em;
+}
+
 .fight_area {
   display: flex;
   justify-content: center;
@@ -153,4 +164,9 @@ img.blood {
   top: 20%;
   left: 35%;
   position: absolute
+}
+
+img.scorpion_win {
+  height: 415px;
+  margin-bottom: -1.5em;
 }

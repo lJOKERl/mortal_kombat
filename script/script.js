@@ -1,6 +1,7 @@
 new Vue({
   el: "#app",
   data: {
+    counter: 30,
     message: "Победа",
     subzero: '<img src="images/sub_zero.gif">',
     scorpion: '<img src="images/scorpion.gif">',
@@ -24,9 +25,14 @@ new Vue({
       this.player.name = "Sub Zero";
       this.computer.name = "Ermak";
       this.subzero = '<img src="images/sub_zero.gif">',
-      this.scorpion = '<img src="images/scorpion.gif">',
+        this.scorpion = '<img src="images/scorpion.gif">',
       this.newGame = true;
       this.win = false;
+
+      var count = setInterval(() => {
+        this.counter--;
+      }, 990);
+      
     },
     giveUp() {
       this.newGame = false;
@@ -116,9 +122,14 @@ new Vue({
     heal() {
       this.player.health += 5;
       this.subzero = '<img src="images/sub_zero_forward.gif">';
+      this.scorpion = '<img src="images/scorpion_block.gif">';
 
       setTimeout(() => {
         this.subzero = '<img src="images/sub_zero.gif">';
+      }, 600);
+
+      setTimeout(() => {
+        this.scorpion = '<img src="images/scorpion.gif">';
       }, 600);
 
       if (this.player.health > 100) {
@@ -135,6 +146,11 @@ new Vue({
         this.newGame = false;
         this.win = true;
         this.message = "Проиграл";
+        this.scorpion = '<img src="images/scorpion_win.gif" class="scorpion_win">';
+        setTimeout(() => {
+          this.scorpion = '<img src="images/scorpion.gif">';
+        }, 400);
+
         this.player.name = "Looser";
         return true;
       }
